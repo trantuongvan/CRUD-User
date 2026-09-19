@@ -1,0 +1,37 @@
+button {
+  width: fit-content;
+  padding: 12px;
+  border-radius: 16px;
+  border: none;
+  /* background-color: #fad71b; */
+  transition: background-color 0.2s ease;
+  margin-left: 10px;
+}
+.btn-add {
+  background-color: #c8f7c5;
+  color: #1a6b1a;
+}
+.btn-add:hover {
+  background-color: #a3e8a0;
+}
+.btn-delete {
+  background-color: #f7c5c5;
+  color: #6b1a1a;
+}
+.btn-delete:hover {
+  background-color: #f09d9d;
+}
+.btn-edit {
+  background-color: #c5e8f7;
+  color: #1a4b6b;
+}
+.btn-edit:hover {
+  background-color: #9dd4f0;
+}
+.btn-clear {
+  background-color: #f0f0f0;
+  color: #555;
+}
+.btn-clear:hover {
+  background-color: #d9d9d9;
+}

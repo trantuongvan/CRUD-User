@@ -1,0 +1,5 @@
+.home-btns {
+  width: calc(100vw - 17px);
+  display: flex;
+  justify-content: flex-end;
+}
