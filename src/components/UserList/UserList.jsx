@@ -7,24 +7,9 @@ const UserList = ({ users, selectedUser, handleSelectUser, loading }) => {
     const columns = ["id", ...allColumns.filter((column) => column !== "id")]; 
 return (
         <>
-
-            {/* <div className="container">
-                {users.map((user) => (
-                    <div key={user.id} className="user-card">
-                        <img src={user.avatar} alt="user.name" className='img-card'/>
-                        <div className='user-content'>
-                            <p>{user.name}</p>
-                            <p>{user.email}</p>
-                            <p>{user.phone}</p>
-                        </div>
-                    </div>
-                ))}
-            </div> */}
-
             {!loading && 
             (<div className="container-user-list">
                 <table border={1}>
-                    <caption>DANH SÁCH USER</caption>
                     <thead>
                         <tr>
                             <th>Select</th>

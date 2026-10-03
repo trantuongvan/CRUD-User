@@ -1,27 +1,6 @@
 import './UserForm.css'
 const UserForm = ({ columns, dataForm, setDataForm}) => {
-
-// const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     console.log("Du lieu chuan bi POST: ", dataForm);
-//     try {
-//         const res = await fetch(
-//         "https://671891927fc4c5ff8f49fcac.mockapi.io/v2",
-//         {
-//             method: 'POST',
-//             headers: {
-//                 'Content-type': 'application/json'
-//             },
-//             body: JSON.stringify(dataForm)
-//         });
-        
-//         const newUser = await res.json();
-//         console.log("Du lieu API tra ve: ", newUser);
-//         setUsers([...users, newUser]);
-//     } catch (err) {
-//         console.log(err);
-//     }
-// }
+    console.log("skibidi");
 
     return (
         <>
@@ -46,13 +25,7 @@ const UserForm = ({ columns, dataForm, setDataForm}) => {
                 ))}
                 
             </form>
-            
-            {/* <div className='container-btn'>
-                <button onClick={() => setShowForm(false)} className='btn-cancel'>Hủy</button>
-                <button type='submit' form='user-form' className='btn-add'>Thêm</button>
-            </div> */}
         </>
     )
 }
-
 export default UserForm;

@@ -5,11 +5,15 @@ import UserForm from './components/UserForm/UserForm.jsx';
 import UserToolBar from './components/UserToolBar/UserToolBar.jsx';
 
 function App() {
+
   const [ users, setUsers ] = useState([]);
+
   const [ loading, setLoading ] = useState(false);
   const [ error, setError ] = useState("");
+
   const [ dataForm, setDataForm ] = useState({});
   const [ selectedUser, setSelectedUser ] = useState(null);
+
 
   const columns = [...new Set(users.flatMap(user => Object.keys(user)))];
 

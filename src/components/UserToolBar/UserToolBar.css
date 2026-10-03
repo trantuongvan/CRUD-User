@@ -1,6 +1,6 @@
 button {
   width: fit-content;
-  padding: 12px;
+  padding: 8px;
   border-radius: 16px;
   border: none;
   /* background-color: #fad71b; */
@@ -34,4 +34,11 @@ button {
 }
 .btn-clear:hover {
   background-color: #d9d9d9;
+}
+.btn-delete-all {
+  background-color: #d49090;
+  color: #4a1010;
+}
+.btn-delete-all:hover {
+  background-color: #c06060;
 }
