@@ -1,6 +1,7 @@
 .container-user-list {
   margin-top: 5px;
   overflow-x: auto;
+  overflow-y: auto;
   max-height: 68vh;
   width: 100vw;
   scrollbar-width: thin;

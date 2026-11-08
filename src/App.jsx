@@ -8,7 +8,7 @@ function App() {
 
   const [ users, setUsers ] = useState([]);
 
-  const [ loading, setLoading ] = useState(false);
+  const [ loading, setLoading ] = useState(true);
   const [ error, setError ] = useState("");
 
   const [ dataForm, setDataForm ] = useState({});
@@ -17,27 +17,51 @@ function App() {
 
   const columns = [...new Set(users.flatMap(user => Object.keys(user)))];
 
-  useEffect(() => {
-    const getUsers = async () => {
+  const LIMIT = 10;
+  const [ page, setPage ] = useState(1);
+  const [ loadingMore, setLoadingMore ] = useState(false);
+  const [ hasMore, setHasMore ] = useState(true);
 
-      setLoading(true);
+  useEffect(() => {
+    const fetchUsers = async () => {
+      if (page === 1) {
+        setLoading(true);
+      } else {
+        setLoadingMore(true);
+      }
 
       try {
-        const res = await fetch('https://671891927fc4c5ff8f49fcac.mockapi.io/v2');
+        const res = await fetch(`https://671891927fc4c5ff8f49fcac.mockapi.io/v2?page=${page}&limit=${LIMIT}`);
         if (!res.ok) {
           throw new Error(res.status);
         }
         const data = await res.json();
-        setUsers(data);
+
+        if (data.length < LIMIT) {
+          setHasMore(false);
+        }
+
+        if (page === 1) {
+          setUsers(data);
+        } else {
+          setUsers(prevUsers => [...prevUsers, ...data]);
+        }
       } catch(err) {
         setError(err.message);
       } finally {
         setLoading(false);
+        setLoadingMore(false);
       }
     };
+    fetchUsers();
+  }, [page]);
 
-    getUsers();
-  }, []);
+  const handleLoadMore = () => {
+    if (hasMore && !loadingMore && !loading) {
+      setLoadingMore(true);
+      setPage(prev => prev + 1);
+    }
+  }
 
   const handleSelectUser = (user) => {
     setSelectedUser(user.id);
@@ -148,6 +172,9 @@ function App() {
                   handleSelectUser={handleSelectUser}
                   selectedUser={selectedUser}
                   loading={loading}
+                  loadingMore={loadingMore}
+                  handleLoadMore={handleLoadMore}
+                  hasMore={hasMore}
         />
       </div>
     </>
