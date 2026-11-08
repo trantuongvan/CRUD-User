@@ -1,12 +1,78 @@
+.toolbar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 6px 10px;
+  box-sizing: border-box;
+}
+
+.toolbar-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 220px;
+  padding: 6px 12px;
+  border: 1.5px solid #aaa;
+  border-radius: 16px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: #1a4b6b;
+}
+
+.sort-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.sort-select {
+  padding: 5px 10px;
+  border: 1.5px solid #aaa;
+  border-radius: 12px;
+  font-size: 13px;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 button {
   width: fit-content;
-  padding: 8px;
+  padding: 8px 14px;
   border-radius: 16px;
   border: none;
-  /* background-color: #fad71b; */
-  transition: background-color 0.2s ease;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.1s ease;
   margin-left: 10px;
 }
+
+button:active {
+  transform: scale(0.97);
+}
+
 .btn-add {
   background-color: #c8f7c5;
   color: #1a6b1a;
@@ -34,11 +100,4 @@ button {
 }
 .btn-clear:hover {
   background-color: #d9d9d9;
-}
-.btn-delete-all {
-  background-color: #d49090;
-  color: #4a1010;
-}
-.btn-delete-all:hover {
-  background-color: #c06060;
 }
